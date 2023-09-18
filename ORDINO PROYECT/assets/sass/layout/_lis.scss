@@ -1,0 +1,43 @@
+header {
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  
+    .menu {
+      display: flex;
+      align-items: center;
+      .logo {
+        img {
+          width: 100px; // Ajusta el ancho de tu logo según sea necesario
+        }
+      }
+  
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+  
+        li {
+          margin: 0;
+          a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 15px;
+            transition: background-color 0.3s ease;
+  
+            &.highlight {
+              background-color: #ff6600;
+            }
+  
+            &:hover {
+              background-color: #ff6600;
+            }
+          }
+        }
+      }
+    }
+  }
+  
