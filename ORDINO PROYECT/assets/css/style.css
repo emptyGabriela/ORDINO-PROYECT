@@ -240,19 +240,18 @@ textarea {
 }
 
 header {
-  background-color: #333;
-  color: white;
+  background-color: #ebeae8;
+  color: black;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 20px;
 }
 header .menu {
   display: flex;
   align-items: center;
-}
-header .menu .logo img {
-  width: 100px;
+  justify-content: flex-end;
+  flex-grow: 1;
 }
 header .menu ul {
   list-style: none;
@@ -261,18 +260,24 @@ header .menu ul {
 }
 header .menu ul li {
   margin: 0;
+  display: inline;
+  margin-right: 20px;
 }
 header .menu ul li a {
   text-decoration: none;
-  color: white;
-  padding: 10px 15px;
-  transition: background-color 0.3s ease;
+  color: black;
+  transition: color 0.3s ease;
 }
 header .menu ul li a.highlight {
   background-color: #ff6600;
 }
 header .menu ul li a:hover {
-  background-color: #ff6600;
+  color: #ff6600;
+}
+header .logo img {
+  width: 100px;
+  height: auto;
+  margin-right: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */
