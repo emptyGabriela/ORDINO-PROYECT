@@ -1,12 +1,13 @@
+@use '../base/globals' as g;
+@use '../base/variables' as v;
 header {
   background-color:#ebeae8 ;
   color:black;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-
-  .menu {
+  padding: 5px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);  .menu {
     display: flex;
     align-items: center;
     justify-content: flex-end; // ESto alinea los enlaces hacia la derecha
@@ -23,27 +24,58 @@ header {
         margin-right: 20px; // Espacio entre los enlaces
 
         a {
+          display: grid;
+          font-family: g.$titles-font;
+          font-size:larger;
+          font-weight:bold;
+          background-image: linear-gradient(
+            to right,
+            v.$rojo,
+            #000 75%,
+            #000 50%
+          );
+          background-size: 200% 100%;
+          background-position: -100%;
+          display: inline-block;
+          padding: 5px 0;
+          position: relative;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          transition: all 0.3s ease-in-out;
           text-decoration: none;
-          color: black;
-          transition: color 0.3s ease;
-
-          &.highlight {
-            background-color: #ff6600;
-          }
-
-          &:hover {
-            color: #ff6600; 
-          }
         }
+        
+        a:before{
+          content: '';
+          background: v.$rojo;;
+          display: block;
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          width: 0;
+          height: 3px;
+          transition: all 0.3s ease-in-out;
+        }
+        
+        a:hover {
+         background-position: 0;
+        }
+        
+        a:hover::before{
+          width: 100%;
+        }
+        
       }
     }
   }
 
   .logo {
     img {
-      width: 100px; // Esto puede cambiar
+      width: 175px; // Esto puede cambiar
       height: auto; 
-      margin-right: 20px; // Espacio entre la imagen y los enlaces del menú
+      margin-left: 15px;
     }
   }
 }
+
+
